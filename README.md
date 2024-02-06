@@ -8,4 +8,4 @@ Meitei Mayek is the script used to write the Meitei language, which is spoken in
 Copyright (C) 2024 by Nokib Sarkar.
 This module is licensed under the terms of the AGPLv3 license.
 But no restriction to use this module for the initial developer.
-A copy of the license is included in the file [LICENSE.md](LICENSE.md).
+A copy of the license is included in the file [LICENCE.md](LICENCE.md).
