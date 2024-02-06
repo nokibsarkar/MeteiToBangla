@@ -97,7 +97,7 @@ def _is_beginning(position, text):
 def is_end_of_word(char):
     return JUNK_CHARACTERS.match(char) or char in {PERIOD}
 
-class MeteiToBengali:
+class MeiteiToBengali:
     def __init__(self, text):
         self.text = text
     @staticmethod
@@ -155,9 +155,9 @@ class MeteiToBengali:
             i += 1
     @staticmethod
     def transliterate(text):
-        return ''.join(MeteiToBengali._mtei_to_bengali(text))
+        return ''.join(MeiteiToBengali._mtei_to_bengali(text))
 if __name__ == "__main__":
     text = """
 ꯒ +   ꯭    + ꯌ = ꯒ꯭ꯌ
 """
-    print(MeteiToBengali.transliterate(text))
+    print(MeiteiToBengali.transliterate(text))

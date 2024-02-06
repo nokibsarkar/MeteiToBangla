@@ -1,3 +1,3 @@
-from mtei import MeteiToBengali
+from mtei import MeiteiToBengali
 
-__all__ = ["MeteiToBengali"]
+__all__ = ["MeiteiToBengali"]
