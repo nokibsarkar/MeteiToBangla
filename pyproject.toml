@@ -1,0 +1,18 @@
+[project]
+name="meiteitobangla"
+version = "0.1.1"
+authors = [
+  { name="Nokib Sarkar", email="nokibsarkar@gmail.com" },
+]
+description = "A package to transliterate from mni-Mtei to mni-Beng"
+readme = "README.md"
+requires-python = ">=3.5"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: AGPL License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/nokibsarkar/meiteitobangla"
+Issues = "https://github.com/nokibsarkar/meiteitobangla/issues"
