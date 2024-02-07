@@ -2,18 +2,22 @@
 This module will transliterate the text from Meetei Mayek to Bengali Script.
 """
 import re
-
 O = '\uABD1'
 OO = 'ꯑꯣ'
 U = '\uABCE'
 EE = 'ꯑꯤ'
 YA = 'ꯌ'
 Y_ = 'য'
+WA = 'ꯋ'
+BA = 'ꯕ'
 NA_ = "ꯟ"
 NA = "ꯅ"
 DIACRITIC_AA = "\uABE5"
 PERIOD = "\uABEB"
 HALANTA = "\uABED"
+"""
+All the diacritics are used to extend the sound of "a" to other vowels.
+"""
 DIACRITICS_WITH_O = {
     "\uABE3" : "ো",
     "\uABE4" : "ী",
@@ -28,7 +32,8 @@ NOT_WEIRD_AFTER_NA_ = {'ꯇ', 'ꯊ', 'ꯗ', 'ꯙ', NA, 'ꯕ', YA, 'ꯁ' }
 VOWELS = {
     O: 'অ',
     'ꯏ': 'ই',
-    '\uABCE': 'উ',
+    'ꯎ': 'উ',
+    'ꯢ' : 'ই',
     "\uABE8" : "ু",
 } | DIACRITICS_WITH_O | CONJUGATE_WITH_O
 NUMERALS = {
@@ -122,7 +127,11 @@ class MeiteiToBengali:
                 য + ্ = য়
                 """
                 yield Y_
-            
+            elif char == WA and i - 2 >= 0 and text[i - 1] == HALANTA and text[i - 2] in CONSONANTS:
+                """
+                ব + ্ + র = ব্র
+                """
+                yield CONSONANTS[BA]
             elif char == NA_ and i + 1 < l and text[i + 1] not in NOT_WEIRD_AFTER_NA_ and text[i + 1] in CONSONANTS:
                 """
                 ন্ / ণ্ + any consonant (except, ট, ঠ, ড, ঢ, , ত, থ, দ, ধ, ন, ব, য, য়) = wierd
@@ -145,7 +154,7 @@ class MeiteiToBengali:
                 """
                 # Replace with Ya
                 yield MTEI_TO_BENG_MAP[YA]
-            elif char not in HALANTA_CONSONANTS and char in CONSONANTS and i + 1 < l and is_end_of_word(text[i + 1]):
+            elif char not in HALANTA_CONSONANTS and char in CONSONANTS and (i == l - 1 or (i + 1 < l and is_end_of_word(text[i + 1]))):
                 """
                 Consonants without halantas should end with diacritics of aa sound everytime.
                 """
@@ -157,7 +166,5 @@ class MeiteiToBengali:
     def transliterate(text):
         return ''.join(MeiteiToBengali._mtei_to_bengali(text))
 if __name__ == "__main__":
-    text = """
-ꯒ +   ꯭    + ꯌ = ꯒ꯭ꯌ
-"""
+    text =  input("Enter the Meetei Mayek Text: ")
     print(MeiteiToBengali.transliterate(text))
