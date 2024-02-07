@@ -1,3 +1,4 @@
+[![PyPI](https://github.com/nokibsarkar/meiteitobangla/actions/workflows/python-publish.yml/badge.svg)](https://github.com/nokibsarkar/meiteitobangla/actions/workflows/python-publish.yml)
 # MeiteiToBangla
 This Python module was created to facilitate the conversion of Manipuri Language (`mni`) from Meitei Mayek script to Bengali script. The module is based on the Unicode standard for Meitei Mayek script and the Unicode standard for Bengali script. The module is designed to be used with Python 3.6 or later.
 I kindly thank the following people for their help in creating this module:
@@ -8,4 +9,4 @@ Meitei Mayek is the script used to write the Meitei language, which is spoken in
 Copyright (C) 2024 by Nokib Sarkar.
 This module is licensed under the terms of the AGPLv3 license.
 But no restriction to use this module for the initial developer.
-A copy of the license is included in the file [LICENCE.md](LICENCE.md).
+A copy of the license is included in the file [LICENCE.md](https://github.com/nokibsarkar/meiteitobangla/blob/main/LICENCE.md). If not, see [https://www.gnu.org/licenses/agpl-3.0.html](https://www.gnu.org/licenses/agpl-3.0.html).
