@@ -9,7 +9,8 @@ readme = "README.md"
 requires-python = ">=3.5"
 classifiers = [
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: AGPL License",
+    "Natural Language :: Bengali",
+    "Topic :: Text Processing :: Linguistic",
     "Operating System :: OS Independent",
 ]
 
