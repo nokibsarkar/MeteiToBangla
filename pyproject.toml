@@ -2,11 +2,11 @@
 name="meiteitobangla"
 version = "1.0.0"
 authors = [
-  { name="Nokib Sarkar",  },
+  { name="Nokib Sarkar"  },
 ]
 description = "A package to transliterate from mni-Mtei to mni-Beng"
 readme = "README.md"
-requires-python = ">=3.5"
+requires-python = ">=3.10"
 classifiers = [
     "Programming Language :: Python :: 3",
     "Natural Language :: Bengali",
