@@ -6,6 +6,7 @@ authors = [
 ]
 description = "A package to transliterate from mni-Mtei to mni-Beng"
 readme = "README.md"
+license = "LICENCE.md"
 requires-python = ">=3.10"
 classifiers = [
     "Programming Language :: Python :: 3",
