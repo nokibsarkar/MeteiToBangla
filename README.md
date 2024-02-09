@@ -8,7 +8,7 @@ Meitei Mayek is the script used to write the Meitei language, which is spoken in
 # Installation
 You can install this module via pip as:
 ```
-pip install -U banglatomeitei
+pip install -U meiteitobangla
 ```
 # Usage
 The module is accessible as `mtei2bangla`.
@@ -16,6 +16,7 @@ The module is accessible as `mtei2bangla`.
 from mtei2bangla import MeiteitoBangla
 input_text = input('Please enter an example text')
 output = MeiteitoBangla.transliterate(input_text)
+```
 # Known Limitations
 1. It adds an `া` at the end of consonants if no diacritics is added. In most cases these are correct but in some foreign loan words, it is not correct. But as this module does not have any capability to distinguish between these words, it would add `া` at the end. Please use  `custom_end_func` (not implemented yet) to handle these correctly.
 # License
