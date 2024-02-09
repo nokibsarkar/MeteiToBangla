@@ -2,7 +2,7 @@
 name="meiteitobangla"
 version = "1.0.0"
 authors = [
-  { name="Nokib Sarkar", email="nokibsarkar@gmail.com" },
+  { name="Nokib Sarkar",  },
 ]
 description = "A package to transliterate from mni-Mtei to mni-Beng"
 readme = "README.md"
