@@ -6,13 +6,14 @@ authors = [
 ]
 description = "A package to transliterate from mni-Mtei to mni-Beng"
 readme = "README.md"
-license = "LICENCE.md"
+# license = "LICENCE.md"
 requires-python = ">=3.10"
 classifiers = [
     "Programming Language :: Python :: 3",
     "Natural Language :: Bengali",
     "Topic :: Text Processing :: Linguistic",
     "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.10"
 ]
 
 [project.urls]
