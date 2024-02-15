@@ -17,6 +17,19 @@ from mtei2bangla import MeiteitoBangla
 input_text = input('Please enter an example text')
 output = MeiteitoBangla.transliterate(input_text)
 ```
+Since version, 1.1.0, the `MeiteitoBangla` has two methods `setpreprocess` and `setpostprocess` to set the pre and post process functions. The `setpreprocess` method takes a function as an argument and the `setpostprocess` method takes a function as an argument. The function should take a string as an argument and return a string. The `transliterate` method will call the pre-process function before transliterating the text and the post-process function after transliterating the text. 
+```python
+from mtei2bangla import MeiteitoBangla
+def custom_preprocess(text):
+    return text
+def custom_postprocess(text):
+    return text
+MeiteitoBangla.setpreprocess(custom_preprocess)
+MeiteitoBangla.setpostprocess(custom_postprocess)
+input_text = input('Please enter an example text')
+output = MeiteitoBangla.transliterate(input_text)
+```
+
 # Known Limitations
 1. It adds an `া` at the end of consonants if no diacritics are added. In most cases these are correct but in some foreign loan words, it is not correct. But as this module does not have any capability to distinguish between these words, it would add `া` at the end. Please use  `custom_end_func` (not implemented yet) to handle these correctly.
 # License
