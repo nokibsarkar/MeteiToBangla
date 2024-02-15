@@ -103,8 +103,16 @@ def is_end_of_word(char):
     return JUNK_CHARACTERS.match(char) or char in {PERIOD}
 
 class MeiteiToBengali:
+    _preprocess = staticmethod(lambda x: x)
+    _postprocess = staticmethod(lambda x: x)
     def __init__(self, text):
         self.text = text
+    @staticmethod
+    def set_preprocess(func):
+        MeiteiToBengali._preprocess = func
+    @staticmethod
+    def set_postprocess(func):
+        MeiteiToBengali._postprocess = func
     @staticmethod
     def _mtei_to_bengali(text):
         """
@@ -164,7 +172,9 @@ class MeiteiToBengali:
             i += 1
     @staticmethod
     def transliterate(text):
-        return ''.join(MeiteiToBengali._mtei_to_bengali(text))
+        text = MeiteiToBengali._preprocess(text)
+        transliterated = ''.join(MeiteiToBengali._mtei_to_bengali(text))
+        return MeiteiToBengali._postprocess(transliterated)
 if __name__ == "__main__":
     text =  input("Enter the Meetei Mayek Text: ")
     print(MeiteiToBengali.transliterate(text))
