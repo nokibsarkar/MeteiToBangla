@@ -37,3 +37,6 @@ Copyright (C) 2024 by Nokib Sarkar.
 This module is licensed under the terms of the AGPLv3 license.
 However, there is no restriction to use this module for the initial developer.
 A copy of the license is included in the file [LICENCE.md](https://github.com/nokibsarkar/meiteitobangla/blob/main/LICENCE.md). If not, see [https://www.gnu.org/licenses/agpl-3.0.html](https://www.gnu.org/licenses/agpl-3.0.html).
+# Known Usage
+This project is currently used on the following projects
+1. [Mayek Bot](https://mni.wikipedia.org/wiki/User:Mayek_Bot): A bot in Manipuri Wikipedia to transliterate from Meitei script articles into Bangla script article. 
