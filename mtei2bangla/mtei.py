@@ -15,6 +15,7 @@ NA = "ꯅ"
 DIACRITIC_AA = "\uABE5"
 PERIOD = "\uABEB"
 HALANTA = "\uABED"
+SKIP = ""
 """
 All the diacritics are used to extend the sound of "a" to other vowels.
 """
@@ -130,6 +131,11 @@ class MeiteiToBengali:
                 """
                 yield CONJUGATE_WITH_O.get(char + text[i + 1], char + text[i + 1])
                 i += 1
+            elif char == HALANTA and i > 0 and text[i - 1] in HALANTA_CONSONANTS:
+                """
+                If the halanta is after a consonant, then we should skip the halanta
+                """
+                yield SKIP
             elif char == YA and i > 0 and text[i - 1] == HALANTA:
                 """
                 য + ্ = য়
@@ -142,7 +148,7 @@ class MeiteiToBengali:
                 yield CONSONANTS[BA]
             elif char == NA_ and i + 1 < l and text[i + 1] not in NOT_WEIRD_AFTER_NA_ and text[i + 1] in CONSONANTS:
                 """
-                ন্ / ণ্ + any consonant (except, ট, ঠ, ড, ঢ, , ত, থ, দ, ধ, ন, ব, য, য়) = wierd
+                ন্ / ণ্ + any consonant (except, ট, ঠ, ড, ঢ, , ত, থ, দ, ধ, ন, ব, য, য়) = weird
                 Any consonant + ্ + ন =  maybe ok
                 """
                 yield MTEI_TO_BENG_MAP[NA]
